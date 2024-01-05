@@ -131,6 +131,13 @@ namespace P04WeatherForecastWPF.Client.ViewModels
             _productDetailsView.DataContext = this;
             SelectedProduct = new Product();
         }
+
+        [RelayCommand]
+        public async Task RecognizeVoice()
+        {
+            var text = await _speechService.RecognizeAsync();
+            SelectedProduct.Description = text; 
+        }
     }
 }
 

@@ -36,6 +36,7 @@
             <TextBox Text="{Binding ReleaseDate}"  Grid.Row="4" Grid.Column="1" ></TextBox>
         </Grid>
         <StackPanel>
+            <Button Content="Speck" Command="{Binding RecognizeVoiceCommand}"></Button>
             <Button Content="Save" Command="{Binding SaveCommand}"></Button>
             <Button Content="Delete" Command="{Binding DeleteCommand}"></Button>
         </StackPanel>
