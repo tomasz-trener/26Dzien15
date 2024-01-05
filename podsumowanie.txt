@@ -1,0 +1,2 @@
+﻿1) W Azure stworzyliśmy nową baze danych i zmigrowaliśmy do niej dane z bazy lokalnej
+	- Dodaliśmy connection string do bazy danych Azure w pliku secrets.json
