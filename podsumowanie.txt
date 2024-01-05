@@ -1,2 +1,12 @@
 ﻿1) W Azure stworzyliśmy nową baze danych i zmigrowaliśmy do niej dane z bazy lokalnej
 	- Dodaliśmy connection string do bazy danych Azure w pliku secrets.json
+	- Pamiętać o firewallu w Azure, który trzeba ustawić tak aby połączenie z naszego IP było dozwolone
+2) Przenosimy API do chmury (App Service)
+	- Pobieramy publish profile z Azure
+	- W Visual Studio wchodzimy w Publish -> Import Profile i wybieramy pobrany plik
+	- W celu diagnostyki błedów w azure możemy użyć Log Stream 
+	- zmieniamy w appsettings.json connection string na ten z Azure
+
+Przeniesienie bazy danych do chmury oraz API jest to PAAS (Platform as a Service) - nie musimy się martwić o infrastrukture, ale nie mamy też pełnej kontroli nad środowiskiem
+żeby mieć pełną kontrolę nad środowiskiem musimy użyć IAAS (Infrastructure as a Service) - wtedy sami musimy zainstalować i skonfigurować środowisko
+trzecia opcja to SAAS (Software as a Service) - wtedy nie musimy się martwić o nic, tylko używać aplikacji
