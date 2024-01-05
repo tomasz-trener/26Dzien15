@@ -13,5 +13,6 @@ namespace P04WeatherForecastWPF.Client.Confguration
 
         public ProductEndpoint ProductEndpoint { get; set; }
 
+        public SpeechSettings SpeechSettings { get; set; }
     }
 }
