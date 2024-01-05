@@ -136,7 +136,18 @@ namespace P04WeatherForecastWPF.Client.ViewModels
         public async Task RecognizeVoice()
         {
             var text = await _speechService.RecognizeAsync();
-            SelectedProduct.Description = text; 
+          //  SelectedProduct.Description = text;
+             
+            SelectedProduct = new Product()
+            {
+                Id = _selectedProduct.Id,
+                Description = text,
+                Barcode = _selectedProduct.Barcode,
+                Title = _selectedProduct.Title,
+                Price = _selectedProduct.Price,
+                ReleaseDate = _selectedProduct.ReleaseDate
+            };
+           
         }
     }
 }

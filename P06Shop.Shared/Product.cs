@@ -22,7 +22,7 @@ namespace P06Shop.Shared
     //}
 
     // fluent api stosujemy gdy model jest współdzielony z innymi projektami
-    public class Product
+    public class Product 
     {
         public int Id { get; set; }
         public string Title { get; set; }
