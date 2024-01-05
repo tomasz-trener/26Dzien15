@@ -1,5 +1,6 @@
 ﻿using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
+using P04WeatherForecastWPF.Client.Confguration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,19 @@ using System.Threading.Tasks;
 
 namespace P04WeatherForecastWPF.Client.Services
 {
-    internal class SpeechService
+    // wymaga zainstalowania: Microsoft.CognitiveServices.Speech
+    public class SpeechService : ISpeechService
     {
+        public readonly SpeechSettings _speechSettings;
+
+        public SpeechService(SpeechSettings speechSettings)
+        {
+            _speechSettings = speechSettings;
+        }
+
         public async Task<string> RecognizeAsync()
         {
-            var config = SpeechConfig.FromSubscription("6e1a59bad95140b08706b9882b08f465", "northeurope");
+            var config = SpeechConfig.FromSubscription(_speechSettings.SpeechApiKey, _speechSettings.SpeechApiRegion);
             return await RecognizeFromMicrophoneAsync(config);
         }
 

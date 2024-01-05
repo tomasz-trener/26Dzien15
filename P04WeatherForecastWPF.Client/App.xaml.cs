@@ -38,10 +38,11 @@ namespace P04WeatherForecastWPF.Client
         private void ConfigureServices(IServiceCollection services)
         {
             var appSettings = ConfigureAppSettings(services);
-            ConfigureAppServices(services);
+            ConfigureAppServices(services, appSettings);
             ConfigureViewModels(services);
             ConfigureViews(services);
             ConfigureHttpClients(services, appSettings);
+
         }
 
         private AppSettings ConfigureAppSettings(IServiceCollection services)
@@ -63,13 +64,14 @@ namespace P04WeatherForecastWPF.Client
             services.AddSingleton<ProductsViewModel>();
         }
 
-        private void ConfigureAppServices(IServiceCollection services)
+        private void ConfigureAppServices(IServiceCollection services, AppSettings appSettings)
         {
             // tutaj konfigurujemy serwisy
             //  services.AddSingleton<IAccuWeatherService, AccuWeatherService>(); 
             services.AddSingleton<IAccuWeatherService, FakeAccuWeatherService>(); // bo wystraczy nam tylko 1 serwis na cala aplikacje 
             services.AddSingleton<IProductService, ProductService>();
             services.AddSingleton<IMessageDialogService, WpfMessageDialogService>();
+            services.AddSingleton<ISpeechService>(_ => new SpeechService(appSettings.SpeechSettings));
         }
 
         private void ConfigureViews(IServiceCollection services)

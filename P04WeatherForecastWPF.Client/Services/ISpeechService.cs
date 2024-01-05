@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P04WeatherForecastWPF.Client.Services
 {
-    internal interface ISpeechService
+    public interface ISpeechService
     {
         Task<string> RecognizeAsync();
     }
