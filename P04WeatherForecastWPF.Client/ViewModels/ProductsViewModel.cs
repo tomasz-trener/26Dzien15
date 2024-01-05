@@ -136,8 +136,9 @@ namespace P04WeatherForecastWPF.Client.ViewModels
         public async Task RecognizeVoice()
         {
             var text = await _speechService.RecognizeAsync();
-          //  SelectedProduct.Description = text;
-             
+            //  SelectedProduct.Description = text;
+
+
             SelectedProduct = new Product()
             {
                 Id = _selectedProduct.Id,
@@ -147,7 +148,7 @@ namespace P04WeatherForecastWPF.Client.ViewModels
                 Price = _selectedProduct.Price,
                 ReleaseDate = _selectedProduct.ReleaseDate
             };
-           
+
         }
     }
 }

@@ -7,6 +7,11 @@
 	- W celu diagnostyki błedów w azure możemy użyć Log Stream 
 	- zmieniamy w appsettings.json connection string na ten z Azure
 
+3) Stworzyliśmy w Azure Speech Service 
+ - Klucz przechowujemy w appsettings.json
+ - Skonfigurowaliśmy Speech Service w pliku kontenerze DI
+ - Dodaliśmy obsługę intrefejsu graficznego w xaml
+
 Przeniesienie bazy danych do chmury oraz API jest to PAAS (Platform as a Service) - nie musimy się martwić o infrastrukture, ale nie mamy też pełnej kontroli nad środowiskiem
 żeby mieć pełną kontrolę nad środowiskiem musimy użyć IAAS (Infrastructure as a Service) - wtedy sami musimy zainstalować i skonfigurować środowisko
 trzecia opcja to SAAS (Software as a Service) - wtedy nie musimy się martwić o nic, tylko używać aplikacji
